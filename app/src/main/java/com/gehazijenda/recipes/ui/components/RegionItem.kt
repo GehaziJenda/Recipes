@@ -14,12 +14,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.gehazijenda.recipes.R
 import com.gehazijenda.recipes.data.constants.AppColors
-import com.gehazijenda.recipes.data.model.Region
+import com.gehazijenda.recipes.data.models.Region
 
 @Composable
 fun RegionItem(region: Region) {

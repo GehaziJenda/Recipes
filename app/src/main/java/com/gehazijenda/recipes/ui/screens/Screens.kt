@@ -6,6 +6,8 @@ package com.gehazijenda.recipes.ui.screens
 //setting our routes this way allows us to ensure we don't make a mistake when calling a screen
 sealed class Screen(val route: String) {
     data object HomeScreen: Screen("homeScreen")
-    data object CategoriesScreen: Screen("categoriesScreen")
-    data object RegionsScreen: Screen("regionsScreen")
+
+//    data object CategoriesScreen: Screen("categoriesScreen")
+//    data object RegionsScreen: Screen("regionsScreen")
+    data object CategoryDetailsScreen : Screen("categoryDetailsScreen")
 }

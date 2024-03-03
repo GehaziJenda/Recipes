@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.gehazijenda.recipes.data.constants.AppColors
@@ -18,12 +19,14 @@ fun TextComponent(
     size: TextUnit? = 16.sp,
     color: Color? = AppColors.textGrey,
     fontWeight: FontWeight? = FontWeight.Normal,
-
+    textAlign: TextAlign? = TextAlign.Start
 ) {
     Text(
         text = text,
         modifier = modifier,
         fontFamily = Fonts.robotoMonoFamily,
+        textAlign = textAlign,
+        lineHeight = 25.sp,
         style = TextStyle(
             fontSize = size ?: 16.sp,
             color = color ?: AppColors.textGrey,

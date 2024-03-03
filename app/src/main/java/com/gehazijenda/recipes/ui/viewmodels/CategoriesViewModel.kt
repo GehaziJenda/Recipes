@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gehazijenda.recipes.data.api.recipeService
-import com.gehazijenda.recipes.data.model.Category
+import com.gehazijenda.recipes.data.models.Category
 import kotlinx.coroutines.launch
 
 class CategoriesViewModel : ViewModel() {

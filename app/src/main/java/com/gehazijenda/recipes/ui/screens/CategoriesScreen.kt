@@ -13,14 +13,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.gehazijenda.recipes.data.model.Category
+import com.gehazijenda.recipes.data.models.Category
 import com.gehazijenda.recipes.ui.components.CategoryItem
 import com.gehazijenda.recipes.ui.components.TextComponent
 import com.gehazijenda.recipes.ui.viewmodels.CategoriesViewModel
 
 @Composable
 fun CategoriesScreen(
-    viewState: CategoriesViewModel.CategoriesStateClass
+    viewState: CategoriesViewModel.CategoriesStateClass,
+    navigateToDetails: (Category) -> Unit
 ) {
     Box (
         modifier = Modifier.fillMaxSize()
@@ -41,7 +42,7 @@ fun CategoriesScreen(
             }
 
             else -> {
-                CategoriesList(categories = viewState.list)
+                CategoriesList(categories = viewState.list, navigateToDetails)
             }
 
         }
@@ -49,7 +50,7 @@ fun CategoriesScreen(
 }
 
 @Composable
-fun CategoriesList(categories: List<Category>) {
+fun CategoriesList(categories: List<Category>, navigateToDetails: (Category) -> Unit) {
     LazyVerticalGrid(
         GridCells.Fixed(2),
         contentPadding = PaddingValues(horizontal = 20.dp, vertical = 15.dp),
@@ -58,7 +59,10 @@ fun CategoriesList(categories: List<Category>) {
         modifier = Modifier.fillMaxSize()) {
         //the lazyGridItemScope provides items
         items(categories) {
-            category -> CategoryItem(category = category)
+            category -> CategoryItem(
+                category = category,
+                navigateToDetail = navigateToDetails
+            )
         }
     }
 }

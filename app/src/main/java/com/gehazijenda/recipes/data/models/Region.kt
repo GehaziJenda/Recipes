@@ -1,4 +1,4 @@
-package com.gehazijenda.recipes.data.model
+package com.gehazijenda.recipes.data.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

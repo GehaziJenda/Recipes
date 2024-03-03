@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gehazijenda.recipes.data.api.recipeService
-import com.gehazijenda.recipes.data.model.Region
+import com.gehazijenda.recipes.data.models.Region
 import kotlinx.coroutines.launch
 
 class RegionsViewModel: ViewModel() {

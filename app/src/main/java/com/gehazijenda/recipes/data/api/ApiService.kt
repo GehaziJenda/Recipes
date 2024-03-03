@@ -1,8 +1,8 @@
 package com.gehazijenda.recipes.data.api
 
 import com.gehazijenda.recipes.data.constants.AppConstants
-import com.gehazijenda.recipes.data.model.CategoriesResponse
-import com.gehazijenda.recipes.data.model.RegionsResponse
+import com.gehazijenda.recipes.data.models.CategoriesResponse
+import com.gehazijenda.recipes.data.models.RegionsResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET

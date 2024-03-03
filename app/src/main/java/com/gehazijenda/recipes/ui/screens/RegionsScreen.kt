@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.gehazijenda.recipes.data.model.Region
+import com.gehazijenda.recipes.data.models.Region
 import com.gehazijenda.recipes.ui.components.RegionItem
 import com.gehazijenda.recipes.ui.components.TextComponent
 import com.gehazijenda.recipes.ui.viewmodels.RegionsViewModel
