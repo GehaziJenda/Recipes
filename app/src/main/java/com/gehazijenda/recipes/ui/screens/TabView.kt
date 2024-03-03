@@ -20,14 +20,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gehazijenda.recipes.data.constants.AppColors
 import com.gehazijenda.recipes.ui.components.TextComponent
 import com.gehazijenda.recipes.ui.viewmodels.CategoriesViewModel
+import com.gehazijenda.recipes.ui.viewmodels.RegionsViewModel
 
 @Composable
-fun TabView(categoriesViewState : CategoriesViewModel.CategoriesStateClass) {
+fun TabView(categoriesViewState : CategoriesViewModel.CategoriesStateClass,
+            regionsViewState: RegionsViewModel.RegionsStateClass) {
     val tabs = listOf("Categories", "Regions")
     var selectedTabIndex by remember {
         mutableStateOf(0)
@@ -64,7 +67,9 @@ fun TabView(categoriesViewState : CategoriesViewModel.CategoriesStateClass) {
                         text = title,
                         color = if (selectedTabIndex == index)
                          AppColors.primaryOrange else Color.Black,
-                        size = 14.sp
+                        size = 14.sp,
+                        fontWeight = if (selectedTabIndex == index)
+                            FontWeight.Medium else FontWeight.Normal,
                         ) }
                 )
             }
@@ -73,7 +78,7 @@ fun TabView(categoriesViewState : CategoriesViewModel.CategoriesStateClass) {
         //display the content based on selected tab
         when (selectedTabIndex) {
             0 -> CategoriesScreen(categoriesViewState)
-            1 -> RegionsScreen()
+            1 -> RegionsScreen(regionsViewState)
         }
     }
 }

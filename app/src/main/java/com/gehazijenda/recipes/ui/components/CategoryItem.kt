@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
@@ -37,6 +38,9 @@ fun CategoryItem(category: Category, modifier: Modifier = Modifier) {
         modifier = Modifier
             .height(190.dp)
             .width(150.dp)
+            .shadow(4.dp,
+                shape = RoundedCornerShape(20.dp),
+                ambientColor = AppColors.appBarGrey)
             .background(
                 color = AppColors.cardBgGrey,
                 shape = RoundedCornerShape(20.dp)

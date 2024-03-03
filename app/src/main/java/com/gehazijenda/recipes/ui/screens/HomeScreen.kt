@@ -19,10 +19,12 @@ import androidx.compose.ui.unit.sp
 import com.gehazijenda.recipes.data.constants.AppColors
 import com.gehazijenda.recipes.ui.components.TextComponent
 import com.gehazijenda.recipes.ui.viewmodels.CategoriesViewModel
+import com.gehazijenda.recipes.ui.viewmodels.RegionsViewModel
 
 
 @Composable
-fun HomeScreen(categoriesViewState : CategoriesViewModel.CategoriesStateClass) {
+fun HomeScreen(categoriesViewState : CategoriesViewModel.CategoriesStateClass,
+               regionsViewState: RegionsViewModel.RegionsStateClass) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -46,7 +48,7 @@ fun HomeScreen(categoriesViewState : CategoriesViewModel.CategoriesStateClass) {
         Column (
             modifier = Modifier.padding(padding)
         ) {
-            TabView(categoriesViewState)
+            TabView(categoriesViewState, regionsViewState)
         }
     }
 }

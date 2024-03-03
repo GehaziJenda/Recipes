@@ -10,6 +10,7 @@ import com.gehazijenda.recipes.ui.screens.CategoriesScreen
 import com.gehazijenda.recipes.ui.screens.HomeScreen
 import com.gehazijenda.recipes.ui.screens.Screen
 import com.gehazijenda.recipes.ui.viewmodels.CategoriesViewModel
+import com.gehazijenda.recipes.ui.viewmodels.RegionsViewModel
 
 @Composable
 fun RecipeApp(navHostController: NavHostController) {
@@ -17,11 +18,15 @@ fun RecipeApp(navHostController: NavHostController) {
     val categoriesViewModel: CategoriesViewModel = viewModel()
     val categoriesState by categoriesViewModel.categoriesState
 
+    //init view model for regions
+    val regionsViewModel: RegionsViewModel = viewModel()
+    val regionsState by regionsViewModel.regionsState
+
     NavHost(navController = navHostController, startDestination = Screen.HomeScreen.route) {
         composable(
             route = Screen.HomeScreen.route
         ) {
-            HomeScreen(categoriesState)
+            HomeScreen(categoriesState, regionsState)
         }
 
     }

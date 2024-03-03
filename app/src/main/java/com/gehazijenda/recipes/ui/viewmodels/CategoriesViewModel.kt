@@ -29,7 +29,7 @@ class CategoriesViewModel : ViewModel() {
     private fun fetchCategories() {
         //viewModelScope enables us to write asynchronous code using Kotlin Coroutines
         //and we can access the coroutine scope through it
-        //any coroutine launched in this scope is automatically cancelled is the ViewModel is destroyed
+        //any coroutine launched in this scope is automatically cancelled as the ViewModel is destroyed
         viewModelScope.launch {
             //try get the categories and catch any errors
             try{
